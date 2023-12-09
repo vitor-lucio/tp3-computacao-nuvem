@@ -45,3 +45,4 @@ data:
 kind: ConfigMap
 metadata:
   name: pyfile
+  namespace: vitorferreira
