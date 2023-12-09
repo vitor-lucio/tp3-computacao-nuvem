@@ -54,7 +54,7 @@ def update_data_graph_0(interval, x, y):
     Input('interval-component', 'n_intervals')
 )
 def update_graph(n):
-    print("intervals from graph 0: " + str(interval_graph_0))
+    #print("intervals from graph 0: " + str(interval_graph_0))
 
     dff = pd.DataFrame({'instante da medicao': {0: 1980, 1: 1981, 2: 1982, 3: 1983, 4: 1984, 5: 1985, 6: 1986, 7: 1987, 8: 1988, 9: 1989}, 'porcentagem trafico outgoing': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10}})
     return px.line(dff, x='instante da medicao', y='porcentagem trafico outgoing')
