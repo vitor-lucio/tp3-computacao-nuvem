@@ -41,3 +41,19 @@ spec:
       - name: pyfile
         configMap:
           name: pyfile
+---
+apiVersion: v1
+data:
+  REDIS_OUTPUT_KEY: vitorferreira-proj3-output
+kind: ConfigMap
+metadata:
+  name: outputkey
+  namespace: vitorferreira
+---
+apiVersion: v1
+data:
+  REDIS_OUTPUT_KEY: vitorferreira-proj3-output
+kind: ConfigMap
+metadata:
+  name: outputkey
+  namespace: vitorferreira
