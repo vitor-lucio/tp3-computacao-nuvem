@@ -6,17 +6,17 @@ import pandas as pd
 # print(df[df.country=='Canada'].to_dict())
 # print(df[df.country=='Canada'])
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
+# df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
 
 app = Dash(__name__)
 
 app.layout = html.Div([
     html.H1(children='graph-content', style={'textAlign':'center'}),
     dcc.Graph(id='graph-content'),
-    html.H1(children='graph-content2', style={'textAlign':'center'}),
-    dcc.Graph(id='graph-content2'),
-    html.H1(children='graph-content3', style={'textAlign':'center'}),
-    dcc.Graph(id='graph-content3'),
+    # html.H1(children='graph-content2', style={'textAlign':'center'}),
+    # dcc.Graph(id='graph-content2'),
+    # html.H1(children='graph-content3', style={'textAlign':'center'}),
+    # dcc.Graph(id='graph-content3'),
     dcc.Interval(
             id='interval-component',
             interval=5*1000, # in milliseconds
@@ -75,25 +75,25 @@ def update_graph(n):
     # dff = df[df.country=='Canada']
     # return px.line(dff, x='year', y='pop')
 
-@callback(
-    Output('graph-content2', 'figure'),
-    Input('interval-component', 'n_intervals')
-)
-def update_graph1(n):
-    print("intervals from graph 1: " + str(interval_graph_1))
-    update_interval_graph_1()
-    dff = df[df.country=='Afghanistan']
-    return px.line(dff, x='year', y='pop')
+# @callback(
+#     Output('graph-content2', 'figure'),
+#     Input('interval-component', 'n_intervals')
+# )
+# def update_graph1(n):
+#     print("intervals from graph 1: " + str(interval_graph_1))
+#     update_interval_graph_1()
+#     dff = df[df.country=='Afghanistan']
+#     return px.line(dff, x='year', y='pop')
 
-@callback(
-    Output('graph-content3', 'figure'),
-    Input('interval-component', 'n_intervals')
-)
-def update_graph2(n):
-    print("intervals from graph 2: " + str(interval_graph_2))
-    update_interval_graph_2()
-    dff = df[df.country=='Zimbabwe']
-    return px.line(dff, x='year', y='pop')
+# @callback(
+#     Output('graph-content3', 'figure'),
+#     Input('interval-component', 'n_intervals')
+# )
+# def update_graph2(n):
+#     print("intervals from graph 2: " + str(interval_graph_2))
+#     update_interval_graph_2()
+#     dff = df[df.country=='Zimbabwe']
+#     return px.line(dff, x='year', y='pop')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=31216)
+    app.run(debug=True, host='0.0.0.0', port=31216)
