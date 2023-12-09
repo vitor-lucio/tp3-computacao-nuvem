@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task2-deployment
+template:
+    metadata:
+      labels:
+        app: task2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task2
+    spec:
+      containers:
+      - name: task2
+        image: vitorlucio/tp3-task2:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 31216
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task2-service
+spec:
+  selector:
+    app: task2
+  ports:
+    - protocol: TCP
+      port: 31216
+      targetPort: 31216
