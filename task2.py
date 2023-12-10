@@ -2,6 +2,7 @@ from dash import Dash, html, dcc, callback, Output, Input
 import plotly.express as px
 import pandas as pd
 import redis
+import json
 
 # df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
 # print(df[df.country=='Canada'].to_dict())
@@ -9,7 +10,7 @@ import redis
 
 # df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder_unfiltered.csv')
 
-redis_client = redis.Redis(host='192.168.121.66', port=6379, db=0)
+redis_client = redis.Redis(host='192.168.121.66', port=6379, db=0, decode_responses=True)
 
 app = Dash(__name__)
 
@@ -57,14 +58,9 @@ def update_data_graph_0(interval, x, y):
     Input('interval-component', 'n_intervals')
 )
 def update_graph(n):
-    #print("intervals from graph 0: " + str(interval_graph_0))
-
-    # dff = pd.DataFrame({'instante da medicao': {0: 1980, 1: 1981, 2: 1982, 3: 1983, 4: 1984, 5: 1985, 6: 1986, 7: 1987, 8: 1988, 9: 1989}, 'porcentagem trafico outgoing': {0: 1, 1: 2, 2: 3, 3: 4, 4: 5, 5: 6, 6: 7, 7: 8, 8: 9, 9: 10}})
-    # return px.line(dff, x='instante da medicao', y='porcentagem trafico outgoing')
-    
     if interval_graph_0 < 10:
         print("Still gathering data for traffic graph: " + str(data_graph_0))
-        metrics_dict = redis_client.get('vitorferreira-proj3-output')
+        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
         update_data_graph_0(interval_graph_0, interval_graph_0 * 5, metrics_dict['traffic'])
         update_interval_graph_0()
         return {}
@@ -72,12 +68,6 @@ def update_graph(n):
         dff = pd.DataFrame(data_graph_0)
         print(dff)
         return px.line(dff, x='time(seconds)', y='traffic')
-
-
-    # redis_dict = {"cpu-0": 4.999999999999999, "cpu-1": 4.375, "cpu-2": 4.2749999999999995, "cpu-3": 31.900000000000002, "cpu-4": 4.866666666666666, "cpu-5": 3.65, "cpu-6": 7.291666666666665, "cpu-7": 5.649999999999999, "cpu-8": 8.608333333333334, "cpu-9": 5.358333333333334, "cpu-10": 4.249999999999999, "cpu-11": 5.008333333333334, "cpu-12": 4.041666666666667, "cpu-13": 6.300000000000001, "cpu-14": 17.458333333333332, "cpu-15": 3.899999999999999, "traffic": 0.022827359293588544, "memory": 0.507892948192654}
-    # redis_dict_in_dataframe_form = pd.
-    # dff = df[df.country=='Canada']
-    # return px.line(dff, x='year', y='pop')
 
 # @callback(
 #     Output('graph-content2', 'figure'),
