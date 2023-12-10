@@ -266,252 +266,198 @@ def update_data_graph_17(interval, x, y):
     Input('interval-component', 'n_intervals')
 )
 def update_graph(n):
-    if interval_graph_0 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_0(interval_graph_0, interval_graph_0 * 5, metrics_dict['traffic'])
-        update_interval_graph_0()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_0)
-        return px.line(dff, x='time(seconds)', y='traffic')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_0(interval_graph_0, interval_graph_0 * 5, metrics_dict['traffic'])
+    update_interval_graph_0()
+    dff = pd.DataFrame(data_graph_0)
+    return px.line(dff, x='time(seconds)', y='traffic')
 
 @callback(
     Output('memory-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_1(n):
-    if interval_graph_1 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_1(interval_graph_1, interval_graph_1 * 5, metrics_dict['memory'])
-        update_interval_graph_1()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_1)
-        return px.line(dff, x='time(seconds)', y='memory')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_1(interval_graph_1, interval_graph_1 * 5, metrics_dict['memory'])
+    update_interval_graph_1()
+    dff = pd.DataFrame(data_graph_1)
+    return px.line(dff, x='time(seconds)', y='memory')
 
 @callback(
     Output('cpu-0-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_2(n):
-    if interval_graph_2 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_2(interval_graph_2, interval_graph_2 * 5, metrics_dict['cpu-0'])
-        update_interval_graph_2()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_2)
-        return px.line(dff, x='time(seconds)', y='cpu-0')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_2(interval_graph_2, interval_graph_2 * 5, metrics_dict['cpu-0'])
+    update_interval_graph_2()
+    dff = pd.DataFrame(data_graph_2)
+    return px.line(dff, x='time(seconds)', y='cpu-0')
 
 @callback(
     Output('cpu-1-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_3(n):
-    if interval_graph_3 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_3(interval_graph_3, interval_graph_3 * 5, metrics_dict['cpu-1'])
-        update_interval_graph_3()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_3)
-        return px.line(dff, x='time(seconds)', y='cpu-1')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_3(interval_graph_3, interval_graph_3 * 5, metrics_dict['cpu-1'])
+    update_interval_graph_3()
+    dff = pd.DataFrame(data_graph_3)
+    return px.line(dff, x='time(seconds)', y='cpu-1')
 
 @callback(
     Output('cpu-2-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_4(n):
-    if interval_graph_4 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_4(interval_graph_4, interval_graph_4 * 5, metrics_dict['cpu-2'])
-        update_interval_graph_4()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_4)
-        return px.line(dff, x='time(seconds)', y='cpu-2')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_4(interval_graph_4, interval_graph_4 * 5, metrics_dict['cpu-2'])
+    update_interval_graph_4()
+    dff = pd.DataFrame(data_graph_4)
+    return px.line(dff, x='time(seconds)', y='cpu-2')
 
 @callback(
     Output('cpu-3-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_5(n):
-    if interval_graph_5 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_5(interval_graph_5, interval_graph_5 * 5, metrics_dict['cpu-3'])
-        update_interval_graph_5()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_5)
-        return px.line(dff, x='time(seconds)', y='cpu-3')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_5(interval_graph_5, interval_graph_5 * 5, metrics_dict['cpu-3'])
+    update_interval_graph_5()
+    dff = pd.DataFrame(data_graph_5)
+    return px.line(dff, x='time(seconds)', y='cpu-3')
 
 @callback(
     Output('cpu-4-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_6(n):
-    if interval_graph_6 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_6(interval_graph_6, interval_graph_6 * 5, metrics_dict['cpu-4'])
-        update_interval_graph_6()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_6)
-        return px.line(dff, x='time(seconds)', y='cpu-4')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_6(interval_graph_6, interval_graph_6 * 5, metrics_dict['cpu-4'])
+    update_interval_graph_6()
+    dff = pd.DataFrame(data_graph_6)
+    return px.line(dff, x='time(seconds)', y='cpu-4')
 
 @callback(
     Output('cpu-5-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_7(n):
-    if interval_graph_7 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_7(interval_graph_7, interval_graph_7 * 5, metrics_dict['cpu-5'])
-        update_interval_graph_7()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_7)
-        return px.line(dff, x='time(seconds)', y='cpu-5')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_7(interval_graph_7, interval_graph_7 * 5, metrics_dict['cpu-5'])
+    update_interval_graph_7()
+    dff = pd.DataFrame(data_graph_7)
+    return px.line(dff, x='time(seconds)', y='cpu-5')
 
 @callback(
     Output('cpu-6-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_8(n):
-    if interval_graph_8 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_8(interval_graph_8, interval_graph_8 * 5, metrics_dict['cpu-6'])
-        update_interval_graph_8()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_8)
-        return px.line(dff, x='time(seconds)', y='cpu-6')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_8(interval_graph_8, interval_graph_8 * 5, metrics_dict['cpu-6'])
+    update_interval_graph_8()
+    dff = pd.DataFrame(data_graph_8)
+    return px.line(dff, x='time(seconds)', y='cpu-6')
 
 @callback(
     Output('cpu-7-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_9(n):
-    if interval_graph_9 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_9(interval_graph_9, interval_graph_9 * 5, metrics_dict['cpu-7'])
-        update_interval_graph_9()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_9)
-        return px.line(dff, x='time(seconds)', y='cpu-7')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_9(interval_graph_9, interval_graph_9 * 5, metrics_dict['cpu-7'])
+    update_interval_graph_9()
+    dff = pd.DataFrame(data_graph_9)
+    return px.line(dff, x='time(seconds)', y='cpu-7')
 
 @callback(
     Output('cpu-8-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_10(n):
-    if interval_graph_10 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_10(interval_graph_10, interval_graph_10 * 5, metrics_dict['cpu-8'])
-        update_interval_graph_10()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_10)
-        return px.line(dff, x='time(seconds)', y='cpu-8')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_10(interval_graph_10, interval_graph_10 * 5, metrics_dict['cpu-8'])
+    update_interval_graph_10()
+    dff = pd.DataFrame(data_graph_10)
+    return px.line(dff, x='time(seconds)', y='cpu-8')
 
 @callback(
     Output('cpu-9-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_11(n):
-    if interval_graph_11 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_11(interval_graph_11, interval_graph_11 * 5, metrics_dict['cpu-9'])
-        update_interval_graph_11()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_11)
-        return px.line(dff, x='time(seconds)', y='cpu-9')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_11(interval_graph_11, interval_graph_11 * 5, metrics_dict['cpu-9'])
+    update_interval_graph_11()
+    dff = pd.DataFrame(data_graph_11)
+    return px.line(dff, x='time(seconds)', y='cpu-9')
 
 @callback(
     Output('cpu-10-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_12(n):
-    if interval_graph_12 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_12(interval_graph_12, interval_graph_12 * 5, metrics_dict['cpu-10'])
-        update_interval_graph_12()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_12)
-        return px.line(dff, x='time(seconds)', y='cpu-10')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_12(interval_graph_12, interval_graph_12 * 5, metrics_dict['cpu-10'])
+    update_interval_graph_12()
+    dff = pd.DataFrame(data_graph_12)
+    return px.line(dff, x='time(seconds)', y='cpu-10')
 
 @callback(
     Output('cpu-11-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_13(n):
-    if interval_graph_13 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_13(interval_graph_13, interval_graph_13 * 5, metrics_dict['cpu-11'])
-        update_interval_graph_13()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_13)
-        return px.line(dff, x='time(seconds)', y='cpu-11')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_13(interval_graph_13, interval_graph_13 * 5, metrics_dict['cpu-11'])
+    update_interval_graph_13()
+    dff = pd.DataFrame(data_graph_13)
+    return px.line(dff, x='time(seconds)', y='cpu-11')
 
 @callback(
     Output('cpu-12-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_14(n):
-    if interval_graph_14 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_14(interval_graph_14, interval_graph_14 * 5, metrics_dict['cpu-12'])
-        update_interval_graph_14()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_14)
-        return px.line(dff, x='time(seconds)', y='cpu-12')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_14(interval_graph_14, interval_graph_14 * 5, metrics_dict['cpu-12'])
+    update_interval_graph_14()
+    dff = pd.DataFrame(data_graph_14)
+    return px.line(dff, x='time(seconds)', y='cpu-12')
 
 @callback(
     Output('cpu-13-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_15(n):
-    if interval_graph_15 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_15(interval_graph_15, interval_graph_15 * 5, metrics_dict['cpu-13'])
-        update_interval_graph_15()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_15)
-        return px.line(dff, x='time(seconds)', y='cpu-13')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_15(interval_graph_15, interval_graph_15 * 5, metrics_dict['cpu-13'])
+    update_interval_graph_15()
+    dff = pd.DataFrame(data_graph_15)
+    return px.line(dff, x='time(seconds)', y='cpu-13')
 
 @callback(
     Output('cpu-14-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_16(n):
-    if interval_graph_16 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_16(interval_graph_16, interval_graph_16 * 5, metrics_dict['cpu-14'])
-        update_interval_graph_16()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_16)
-        return px.line(dff, x='time(seconds)', y='cpu-14')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_16(interval_graph_16, interval_graph_16 * 5, metrics_dict['cpu-14'])
+    update_interval_graph_16()
+    dff = pd.DataFrame(data_graph_16)
+    return px.line(dff, x='time(seconds)', y='cpu-14')
 
 @callback(
     Output('cpu-15-graph', 'figure'),
     Input('interval-component', 'n_intervals')
 )
 def update_graph_17(n):
-    if interval_graph_17 < 10:
-        metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
-        update_data_graph_17(interval_graph_17, interval_graph_17 * 5, metrics_dict['cpu-15'])
-        update_interval_graph_17()
-        return {}
-    else:
-        dff = pd.DataFrame(data_graph_17)
-        return px.line(dff, x='time(seconds)', y='cpu-15')
+    metrics_dict = json.loads(redis_client.get('vitorferreira-proj3-output'))
+    update_data_graph_17(interval_graph_17, interval_graph_17 * 5, metrics_dict['cpu-15'])
+    update_interval_graph_17()
+    dff = pd.DataFrame(data_graph_17)
+    return px.line(dff, x='time(seconds)', y='cpu-15')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=31216)
